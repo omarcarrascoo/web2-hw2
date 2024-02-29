@@ -1,0 +1,39 @@
+<%- layout('layout/main.ejs') %>
+
+<div class="container mt-4">
+  <h1 class="text-center">Meal Kits Seneca</h1>
+  <br>
+  <br>
+  <div>
+    <h2>Select a category</h2>
+    <ul>
+        <% categories.forEach((category, index) => { %>
+            <li><a href="/mealkits/<%= category %>"><%= category %></a></li>
+        <% }); %>
+    </ul>
+  </div>
+
+  <div class="row">
+    <% mealKitsArray.forEach((mealKit, index) => { %>
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <img src="<%= mealKit.imageUrl %>" class="card-img-top" alt="<%= mealKit.title %>">
+          <div class="card-body">
+            <h2 class="card-title"><%= mealKit.title %></h2>
+            <p class="card-text"><strong>Includes:</strong> <%= mealKit.includes %></p>
+            <p class="card-text"><strong>Description:</strong> <%= mealKit.description %></p>
+            <p class="card-text"><strong>Category:</strong> <%= mealKit.category %></p>
+            <p class="card-text"><strong>Price:</strong> $<%= mealKit.price.toFixed(2) %></p>
+            <p class="card-text"><strong>Cooking Time:</strong> <%= mealKit.cookingTime %> minutes</p>
+            <p class="card-text"><strong>Servings:</strong> <%= mealKit.servings %></p>
+            <p class="card-text"><strong>Featured:</strong> <%= mealKit.featuredMealKit ? 'Yes' : 'No' %></p>
+          </div>
+        </div>
+      </div>
+
+      <% if ((index + 1) % 2 === 0) { %>
+        <div class="w-100 d-md-none"></div> <!-- Add a line break on small screens after every two meal kits -->
+      <% } %>
+    <% }); %>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<%- layout('layout/main.ejs')%>
+    
+    <div class="container container-sm d-flex justify-content-center flex-column align-items-center flex- min-vh-100">
+        <h1>Sign Up </h1>
+        <p class="w-25 text-center">Create your account by entering your email address and choosing a password.</p>
+        <form class="w-25" action="/signup" method="post">
+            <div class="mb-3">
+              <label for="username" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="name">
+            </div>
+            <div class="mb-3">
+              <label for="username" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="lastName">
+            </div>
+            <div class="mb-3">
+              <label for="username" class="form-label">Email Address</label>
+              <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">password</label>
+              <input type="password" class="form-control" id="password" name="password">
+            </div>
+            <div class="d-flex align-items-center justify-content-between">
+                <button type="submit" class="btn btn-primary ">Sign up today</button>
+                <p style="margin: 0 0 0 50px; padding:0; font-size: 14px; ">Do you already have an account? <a href="/login">Login</a></p>
+            </div>
+          </form>
+    </div>
